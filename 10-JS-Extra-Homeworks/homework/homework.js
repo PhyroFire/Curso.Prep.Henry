@@ -10,6 +10,12 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+
+  var arregloDeObjeto = []
+  for ( var x in objeto){
+    arregloDeObjeto.push([x, objeto[x]])
+  }
+  return arregloDeObjeto
 }
 
 
@@ -36,6 +42,17 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var minusculas =""
+  var mayusculas =""
+  for(i = 0 ; i < s.length ; i ++){
+    if ( s.charAt(i) === s.charAt(i).toUpperCase()){
+      mayusculas = mayusculas + s.charAt(i)
+    }
+    else {
+      minusculas = minusculas + s.charAt(i)
+    }
+  }
+  return mayusculas + minusculas
 }
 
 
@@ -45,6 +62,12 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  var fraseSeparada = str.split(" ")
+  var fraseInvertida = []
+    for ( var prop in fraseSeparada){
+      fraseInvertida.push(fraseSeparada[prop].split("").reverse().join(""))
+    }
+  return fraseInvertida.join(" ")
 } 
 
 
@@ -53,6 +76,12 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  var numeroComun = numero.toString();
+  var numeroInvertido = numeroComun.split("").reverse().join("");
+  if ( numeroComun === numeroInvertido){
+    return "Es capicua"
+  }
+  return "No es capicua"
 }
 
 
@@ -60,6 +89,13 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  var cadenaFiltrada = ""
+for ( i = 0 ; i < cadena.length ; i++){
+  if ( cadena[i] != "a" && cadena[i] != "b" && cadena[i] != "c"){
+    cadenaFiltrada = cadenaFiltrada + cadena[i]
+  }
+}
+return cadenaFiltrada
 }
 
 
@@ -67,6 +103,7 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+
 }
 
 
